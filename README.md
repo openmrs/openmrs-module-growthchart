@@ -12,5 +12,7 @@ ___
 2. Build the module using *mvn clean install* 
 3. Copy the `.omod file` from `omod/target` folder and deploy it on the Reference application server 
 
+[![Build Status](https://travis-ci.org/openmrs/openmrs-module-growthchart.svg?branch=master)](https://travis-ci.org/openmrs/openmrs-module-growthchart)
+
 
 
