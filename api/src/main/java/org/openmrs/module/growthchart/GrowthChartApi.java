@@ -142,11 +142,28 @@ public class GrowthChartApi {
 	}
 	
 	private Set<Obs> getObsFromConceptForPatient(Patient patient, String gpCodeForConcept, Integer conceptId) {
+		Concept concept = null;
+		String gpValue = Context.getAdministrationService().getGlobalProperty(gpCodeForConcept);
+		if (StringUtils.isNotBlank(gpValue)) {
+			Integer gpConcepId = null;
+			try {
+				// check if GP is an Integer
+				gpConcepId = Integer.valueOf(gpValue);
+			} catch (NumberFormatException nfe) {
+				gpConcepId = null;
+			}
+			if (gpConcepId != null) {
+				concept = Context.getConceptService().getConcept(gpConcepId);
+			} else {
+				concept = Context.getConceptService().getConceptByUuid(gpValue);
+			}
+		}
+		if (concept == null ) {
+			concept = Context.getConceptService().getConcept(conceptId);
+		}
 		return new HashSet<Obs>(Context.getObsService().getObservationsByPersonAndConcept(
 		    patient.getPerson(),
-		    Context.getConceptService().getConcept(
-		        StringUtils.isNotBlank(Context.getAdministrationService().getGlobalProperty(gpCodeForConcept)) ? Integer
-		                .parseInt(Context.getAdministrationService().getGlobalProperty(gpCodeForConcept)) : conceptId)));
+		    concept));
 	}
 	
 	private Date getObservationDate(Obs obs) {
