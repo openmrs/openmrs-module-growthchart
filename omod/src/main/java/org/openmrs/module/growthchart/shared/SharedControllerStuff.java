@@ -94,7 +94,7 @@ public class SharedControllerStuff {
 			patientPlottableData.put("hcageinfPatient",
 			    growthChatApi.getHeadCircumferenceAtGivenPatientAges(patient, birthTo36Months));
 			patientPlottableData.put("whoHeadCircumferenceForAgePatient",
-			    growthChatApi.getHeadCircumferenceAtGivenPatientAges(patient, twoTo20Years));
+			    growthChatApi.getHeadCircumferenceAtGivenPatientAges(patient, birthTo24Months));
 		}
 		catch (NullPointerException e) {
 			InfoErrorMessageUtil.flashInfoMessage(session, ui.message(NULL_HEAD_CIRCUMFRENCE));
