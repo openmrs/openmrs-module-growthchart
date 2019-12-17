@@ -6,16 +6,20 @@
 	<li>
 		<a id="LENAGEINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.LENAGEINF") }</a>
 	</li>
+	<!-- not implemented yet
 	<li>
 		<a id="WTLENINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTLENINF") }</a>
 	</li>
+	-->
 	<li>
 		<a id="HCAGEINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.HCAGEINF") }</a>
 	</li>
 	<%if (patientPropts.age.years >= 2) {%>
+		<!-- not implemented yet
 		<li>
-			<a id="WTSTAT" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTSTAT") }</a>
+        	<a id="WTSTAT" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTSTAT") }</a>
 		</li>
+		-->
 		<li>
 			<a id="WTAGE" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTAGE") }</a>
 		</li>
