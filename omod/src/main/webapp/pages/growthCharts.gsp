@@ -56,9 +56,9 @@
 		var bmiAgeRevPatient = patientPlottableData.bmiAgeRevPatient;
 		var whoBMIForAgePatient = patientPlottableData.whoBMIForAgePatient;
 		//TODO support these below
-		var wtleninfPatient;
-		var wtstatPatient;
-		var whoWeightForLengthPatient;
+		var wtleninfPatient = patientPlottableData.wtleninfPatient;
+		var wtstatPatient = patientPlottableData.wtstatPatient;
+		var whoWeightForLengthPatient = patientPlottableData.whoWeightForLengthPatient;
     
     	//TODO fix this trigger
     	jQuery('#WTAGEINF').trigger('click');

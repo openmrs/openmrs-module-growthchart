@@ -13,12 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.json.JSONObject;
 import org.openmrs.Patient;
-import org.openmrs.api.context.Context;
-import org.openmrs.module.growthchart.AgeUnit;
-import org.openmrs.module.growthchart.ChartJSAgeAxis;
-import org.openmrs.module.growthchart.GrowthChartApi;
 import org.openmrs.module.growthchart.shared.SharedControllerStuff;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.page.PageModel;

@@ -60,7 +60,34 @@ public class GrowthChartApi {
 		} else
 			return null;
 	}
-	
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public JSONArray getWeightAtGivenLengths(Patient patient ,ChartJSAgeAxis ageAxis){
+		List<Obs> weightsObs = new ArrayList(getWeightConceptObsForAPatient(patient));
+		sortObsListByObsDateTime(weightsObs);
+
+		List<Obs> heightsObs = new ArrayList(getHeightConceptObsForAPatient(patient));
+		sortObsListByObsDateTime(heightsObs);
+
+		JSONArray WeightForLenths = new JSONArray();
+		
+		if (heightsObs != null && weightsObs!= null && ageAxis != null) {
+			Integer[] ages = createIntegerArrayByRange(ageAxis.getStartAge(), ageAxis.getLastAge(),
+			    ageAxis.getAgeDifference());
+			
+			for (int i = 0; i < ages.length; i++) {
+				JSONObject WeightForLenth = new JSONObject();
+				Double heightValueAtAge = getObsValueAtAGivenAge(heightsObs, ageAxis.getAgeUnit(), ages[i]);
+				Double WeightValueAtAge = getObsValueAtAGivenAge(weightsObs, ageAxis.getAgeUnit(), ages[i]);
+				if (heightValueAtAge != null && WeightValueAtAge != null) {
+					WeightForLenth.put(String.valueOf(heightValueAtAge.intValue()), WeightValueAtAge);
+					WeightForLenths.put(WeightForLenth);
+				}
+			}
+		}
+		return WeightForLenths;
+	}
+
 	public JSONArray getPatientBMIsAcrossAnAgeDifference(Patient patient, ChartJSAgeAxis ageAxis) {
 		Date birthDate = patient.getBirthdate();
 		Calendar atAgeFromBirth = Calendar.getInstance(Context.getLocale());
@@ -104,7 +131,7 @@ public class GrowthChartApi {
 		}
 		return bmis;
 	}
-	
+
 	public Integer getPatientAgeInMonths(Patient patient) {
 		if (patient.getBirthdate() == null) {
 			return null;

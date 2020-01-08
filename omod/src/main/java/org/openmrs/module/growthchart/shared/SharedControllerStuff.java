@@ -102,7 +102,13 @@ public class SharedControllerStuff {
 		patientPlottableData.put("whoBMIForAgePatient",
 		    growthChatApi.getPatientBMIsAcrossAnAgeDifference(patient, birthTo24Months));
 		patientPlottableData.put("bmiAgeRevPatient",
-		    growthChatApi.getPatientBMIsAcrossAnAgeDifference(patient, twoTo20Years));
+			growthChatApi.getPatientBMIsAcrossAnAgeDifference(patient, twoTo20Years));
+		patientPlottableData.put("wtleninfPatient",
+			growthChatApi.getWeightAtGivenLengths(patient, birthTo36Months));
+		patientPlottableData.put("wtstatPatient",
+			growthChatApi.getWeightAtGivenLengths(patient, twoTo20Years));
+		patientPlottableData.put("whoWeightForLengthPatient",
+			growthChatApi.getWeightAtGivenLengths(patient, birthTo24Months));	
 		return patientPlottableData;
 	}
 }

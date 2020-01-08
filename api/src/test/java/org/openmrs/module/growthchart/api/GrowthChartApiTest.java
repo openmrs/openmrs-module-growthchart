@@ -59,4 +59,13 @@ public class GrowthChartApiTest extends BaseModuleContextSensitiveTest {
 		String expectedJsonStringDataAtDiffAges = "[{\"1\":1},{\"6\":3},{\"8\":4},{\"9\":5},{\"11\":6},{\"13\":7}]";
 		Assert.assertEquals(json.toString(), expectedJsonStringDataAtDiffAges);
 	}
+
+	@Test
+	public void shouldGetWeightsAtGivenPatientHeights() {
+		Patient patient = Context.getPatientService().getPatient(2);
+		ChartJSAgeAxis ageAxis = new ChartJSAgeAxis(0, 20, 1, AgeUnit.MONTHS);
+		JSONArray json = growthChart.getWeightAtGivenLengths(patient ,ageAxis);
+		String expectedJsonStringDataAtDiffHeights = "[{\"1\":1},{\"3\":3},{\"4\":4},{\"6\":6},{\"7\":7}]";
+		Assert.assertEquals(json.toString(), expectedJsonStringDataAtDiffHeights);
+	}
 }
