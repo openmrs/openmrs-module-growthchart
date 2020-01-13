@@ -5,7 +5,6 @@
 	<li>
 		<a id="LHFA" class="growthChartWhoLink" href="#">${ ui.message("growthchart.LHFA") }</a>
 	</li>
-	<!-- not implemented yet -->
 	<li>
 		<a id="WFL" class="growthChartWhoLink" href="#">${ ui.message("growthchart.WFL") }</a>
 	</li>

@@ -55,7 +55,6 @@
 		var whoHeadCircumferenceForAgePatient = patientPlottableData.whoHeadCircumferenceForAgePatient;
 		var bmiAgeRevPatient = patientPlottableData.bmiAgeRevPatient;
 		var whoBMIForAgePatient = patientPlottableData.whoBMIForAgePatient;
-		//TODO support these below
 		var wtleninfPatient = patientPlottableData.wtleninfPatient;
 		var wtstatPatient = patientPlottableData.wtstatPatient;
 		var whoWeightForLengthPatient = patientPlottableData.whoWeightForLengthPatient;
