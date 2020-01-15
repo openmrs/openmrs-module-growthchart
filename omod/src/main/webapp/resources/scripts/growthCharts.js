@@ -28,7 +28,7 @@ var growthChartCurveColors = {
 	"P90" : "#EEA616",
 	"P95" : "cyan",
 	"P97" : "#51a351",
-	"Patient" : "#F26522",
+	"Patient" :"#FF0000",
 	"Pub3" : "#808080",
 	"Pub5" : "#808080",
 	"Pub10" : "#808080",
@@ -322,8 +322,8 @@ function generate_ChartJS_dataset(labelHackCode, dataValues) {
 		borderColor : growthChartCurveColors[labelHackCode],
 		borderWidth : ((labelHackCode == "Patient") ? 2 : 1),
 		spanGaps : true,
-		pointBackgroundColor: growthChartCurveColors[labelHackCode],
-		pointRadius: 3.5
+		pointBackgroundColor:  ((labelHackCode == "Patient") ? growthChartCurveColors[labelHackCode]:""),
+		pointRadius: ((labelHackCode == "Patient") ? 4.5 : 3),
 	};
 }
 
