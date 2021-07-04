@@ -1,34 +1,35 @@
 
-<ul class="navList">
-	<li>
-		<a id="WTAGEINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTAGEINF") }</a>
-	</li>
-	<li>
-		<a id="LENAGEINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.LENAGEINF") }</a>
-	</li>
-	<li>
-		<a id="WTLENINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTLENINF") }</a>
-	</li>
+<select id="cdcGrowthChartsDropDown">
+<option value="" disabled selected hidden>Select chart</option>
+	<option id="WTAGEINF">
+		${ ui.message("growthchart.WTAGEINF") }
+	</option>
+	<option id="LENAGEINF">
+		${ ui.message("growthchart.LENAGEINF") }
+	</option>
+	<option id="WTLENINF">
+	${ ui.message("growthchart.WTLENINF") }
+	</option>
 	
-	<li>
-		<a id="HCAGEINF" class="growthChartCDCLink" href="#">${ ui.message("growthchart.HCAGEINF") }</a>
-	</li>
+	<option id="HCAGEINF">
+		${ ui.message("growthchart.HCAGEINF") }
+	</option>
 	<%if (patientPropts.age.years >= 2) {%>
-		<li>
-        	<a id="WTSTAT" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTSTAT") }</a>
-		</li>
+		<option id="WTSTAT">
+        	${ ui.message("growthchart.WTSTAT") }
+		</option>
 		
-		<li>
-			<a id="WTAGE" class="growthChartCDCLink" href="#">${ ui.message("growthchart.WTAGE") }</a>
-		</li>
-		<li>
-			<a id="STATAGE" class="growthChartCDCLink" href="#">${ ui.message("growthchart.STATAGE") }</a>
-		</li>
-		<li>
-			<a id="BMIAGE" class="growthChartCDCLink" href="#">${ ui.message("growthchart.BMIAGE") }</a>
-		</li>
+		<option id="WTAGE">
+			${ ui.message("growthchart.WTAGE") }
+		</option>
+		<option id="STATAGE">
+		${ ui.message("growthchart.STATAGE") }
+		</option>
+		<option id="BMIAGE">
+		${ ui.message("growthchart.BMIAGE") }
+		</option>
 	<%}%>
-</ul>
+</select>
 <br />
 <div id="cdc_growth_charts-container">
 	<canvas id="cdc_growth_charts"></canvas>
