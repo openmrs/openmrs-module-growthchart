@@ -83,7 +83,7 @@
 
 	<properties>
 		<openmrsPlatformVersion>1.11.6</openmrsPlatformVersion>
-		<jsonVersion>20160212</jsonVersion>
+		<jsonVersion>20230227</jsonVersion>
 		<jodaVersion>2.10.3</jodaVersion>
 		<javaCompilerVersion>1.8</javaCompilerVersion>
 		<uicommonsVersion>2.3.0</uicommonsVersion>
